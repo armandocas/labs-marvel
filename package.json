@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/armandocas/labs-marvel.git"
   },
-  "keywords": [],
+  "keywords": ["marvel"],
   "author": "Armando Castellan Neto",
   "license": "ISC",
   "bugs": {
