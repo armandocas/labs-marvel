@@ -1,0 +1,4 @@
+# Vou deixar minhas chaves pois quero que funcione, porém não é uma boa pratica fazer isso.
+API_URL=https://gateway.marvel.com/v1/public
+PUBLIC_KEY=835f1646d4561f50b309a3c10bbc4db8
+PRIVATE_KEY=78e72730ebc1de4cb851516e3fdc41ffdfedf075
