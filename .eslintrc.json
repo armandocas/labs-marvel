@@ -1,0 +1,49 @@
+{
+    "env": {
+      "jest": true,
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "airbnb",
+      "prettier"
+    ],
+    "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "prettier",
+      "react",
+      "react-hooks"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "react/react-in-jsx-scope": 0,
+      "react/jsx-filename-extension": 0,
+      "camelcase": 0,
+      "import/prefer-default-export": 0,
+      "react/jsx-props-no-spreading": 0
+    },
+    "settings": {
+      "import/resolver": {
+        "alias": {
+          "map": [
+            ["@assets", "./src/assets"],
+            ["@components", "./src/components"],
+            ["@pages", "./src/pages"],
+            ["@services", "./src/services"],
+            ["@styles", "./src/styles"],
+            ["@utils", "./src/utils"]
+          ],
+          "extensions": [".ts", ".js", ".jsx", ".json"]
+        }
+      }
+    }
+  }
+  
