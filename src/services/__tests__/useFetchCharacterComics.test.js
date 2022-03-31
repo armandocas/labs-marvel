@@ -105,4 +105,5 @@ describe('Validate flow for get character comics from custom hook', () => {
 
     scope.done();
   });
+
 });

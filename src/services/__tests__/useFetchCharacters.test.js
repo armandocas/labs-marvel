@@ -1,22 +1,25 @@
 import nock from 'nock';
 import { renderHook, act } from '@testing-library/react-hooks';
 import useFetchCharacters from '../useFetchCharacters';
+import generateMandatoryQueryString from '@utils/generateMandatoryQueryString';
+
 
 const charactersMock = {
   count: 2,
   results: [
     {
       id: 1,
-      name: 'Spider-Man',
-      description: 'Descrição do Spider-Man',
-      thumbnail: { extension: 'jpg', path: 'http://image.domain/spider_man' },
+      name: 'SPIDER-DOK',
+      description: 'Descrição não encontrada',
+      thumbnail: { extension: 'jpg', path: 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available' },
     },
     {
       id: 2,
-      name: 'Spider-Girl',
-      description: 'Descrição do Spider-Girl',
-      thumbnail: { extension: 'jpg', path: 'http://image.domain/spider_girl' },
+      name: 'SPIDER-GWEN (GWEN STACY)',
+      description: 'Descrição não encontrada',
+      thumbnail: { extension: 'jpg', path: 'http://i.annihil.us/u/prod/marvel/i/mg/c/90/54edf8eb8f102' },
     },
+
   ],
 };
 
@@ -52,6 +55,29 @@ describe('Validate flow for get character from custom hook', () => {
     expect(typeof getCharacters).toBe('function');
     expect(typeof getFavoritesCharacters).toBe('function');
     expect(typeof setCharactersList).toBe('function');
+  });
+
+  it('Should be search Favorite', async () => {
+    const { result } = renderHook(() => useFetchCharacters());
+    const { getFavoritesCharacters } = result.current;
+    const favoriteId = [];
+    const query = generateMandatoryQueryString()
+
+    const path = `/characters/${favoriteId}${query}&limit=20&offset=0`;
+
+    const scope = nock(baseUrl).get(path).reply(200, {
+      data: charactersMock,
+    });
+
+    act(() => {
+      getFavoritesCharacters(favoriteId);
+    });
+
+    expect(result.current.charactersIsLoading).toEqual(false);
+    expect(result.current.charactersError).toBe('Nenhum herói encontrado');
+
+    console.log('k7', scope);
+    // scope.done();
   });
 
   it('Should be fetch for list characters and returned status success', async () => {
