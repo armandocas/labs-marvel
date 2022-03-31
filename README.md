@@ -1,5 +1,23 @@
-# LuizaLabs | Marvel 🦸‍♂️
-Catálogo de super Heróis. Você pode navegar por mais de 1.500 heróis da Marvel, pesquisar por nome e ter até 5 personagens como seus FAVORITOS. Para cada personagem, você pode obter uma breve descrição, juntamente com algumas curiosidades. 
+#  LuizaLabs | Marvel 
+Catálogo de super Heróis. Você pode navegar por mais de 1.500 heróis da Marvel. 
+#
+## 👩‍💻 Link Público
+* [ACESSAR APLICAÇÃO](https://neon-frangollo-bf6d00.netlify.app/)
+
+#
+
+## Funcionalidades
+* Lista de Personagens
+* Pesquisa pelo nome do Herói 
+* Ordenação da lista
+* Paginação
+* Página de detalhe com informações sobre o Personagem
+* Listagem de Heróis favoritos
+* Limite de favoritos: 5 Heróis
+* Adicionar ou remover dos favoritos
+* Layout Responsivo
+#
+
 # Conventional Commits
 Commits pontuais
 biblioteca : git-commit-msg-linter garante que o commit respeitará o formato do Conventional Commitsnpm:
@@ -21,7 +39,7 @@ biblioteca : git-commit-msg-linter garante que o commit respeitará o formato do
 * Babel
 #
 
-## Instalação do Projeto
+## 🚀 Instalação do Projeto
 #
 Clone o projeto:
 ```bash
@@ -39,7 +57,7 @@ yarn
 ```
 #
 
-## Adicionando chaves
+## ⚙ Adicionando chaves
 * Observe o arquivo: `.envExemplo` -> 
 ```bash
 API_URL=SuaURL
@@ -57,6 +75,38 @@ Inicie o servidor localmente para acessar a aplicação:
 npm run dev
 # ou
 yarn dev
+```
+* Será aberto uma aba em seu navegador: http://localhost:8080
+#
+
+## Comando Complementar
+ * Para realizar o build do Projeto:
+```bash
+npm run build
+# ou
+yarn run build
+```
+* Este comando compila o aplicativo para produção na pasta: `dist`
+#
+
+## 🧪 Testes
+* Checa por problemas de sintaxe no código, definidas no ESlint:
+```bash
+npm run lint
+# ou 
+yarn run lint
+```
+* Executa testes criados no projeto:
+```bash
+npm run test
+# ou
+yarn run test
+```
+* Teste analisando a cobertura no código:
+```bash
+npm run test:coverage
+# ou
+yarn run test:coverage
 ```
 #
 
