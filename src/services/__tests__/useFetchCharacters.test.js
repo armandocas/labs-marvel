@@ -76,8 +76,7 @@ describe('Validate flow for get character from custom hook', () => {
     expect(result.current.charactersIsLoading).toEqual(false);
     expect(result.current.charactersError).toBe('Nenhum herói encontrado');
 
-    console.log('k7', scope);
-    // scope.done();
+    scope.done();
   });
 
   it('Should be fetch for list characters and returned status success', async () => {
