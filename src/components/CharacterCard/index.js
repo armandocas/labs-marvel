@@ -2,12 +2,15 @@ import { memo, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import "!style-loader!css-loader!react-toastify/dist/ReactToastify.css"
 import iconHeartUnfilled from '@assets/icones/heart/Path Copy 2@2x.png';
 import iconHeartFilled from '@assets/icones/heart/Path Copy 7@2x.png';
 import useFavoritesStorage from '@utils/useFavoritesStorage';
+import { injectStyle } from 'react-toastify/dist/inject-style';
 import Button from '../Button';
 import * as S from './styles';
+
+
+injectStyle();
 
 const CharacterCard = ({ character }) => {
   const router = useHistory();
@@ -25,18 +28,12 @@ const CharacterCard = ({ character }) => {
       const favorites = getFavorites();
       updateFavorites(oldIsFavorite, id);
 
-      console.log('favorito', favorites.length);
-      console.log('oldIsFavorite', oldIsFavorite);
-      if (favorites.length === 5 && oldIsFavorite == false) {
-        console.log('Entrou');
-        toast("Ops...Você só pode ter 5 Heróis Favoritos! ", {
-          type: "error",
-          position: "top-right",
-          theme: "colored"
-
+      if (favorites.length === 5 && oldIsFavorite === false) {
+        toast('Ops...Você só pode ter 5 Heróis Favoritos! ', {
+          type: 'error',
+          position: 'top-right',
+          theme: 'colored',
         });
-
-
       }
 
       if (oldIsFavorite) return !oldIsFavorite;

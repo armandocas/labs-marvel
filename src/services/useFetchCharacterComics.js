@@ -17,7 +17,7 @@ const useFetchCharacterComics = () => {
       .then(({ data: { data } }) => {
         setComics(data);
       })
-      .catch(({ message }) => setComicsError(message || 'Erro ao carregar quadrinhos'));
+      .catch(({ message }) => setComicsError(message));
 
     setComicsIsLoading(false);
   }, []);

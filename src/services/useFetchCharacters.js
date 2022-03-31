@@ -26,7 +26,7 @@ const useFetchCharacters = () => {
         setCharactersData(data);
         setCharactersList(data.results);
       })
-      .catch(({ message }) => setCharactersError(message || 'Erro ao carregar personagens'));
+      .catch(({ message }) => setCharactersError(message));
 
     setCharactersIsLoading(false);
   }, []);
@@ -36,7 +36,7 @@ const useFetchCharacters = () => {
     setCharactersError('');
 
     if (favoritesId.length === 0) {
-      setCharactersError('Nenhum herói encontrado');
+      setCharactersError("Nenhum herói encontrado");
       setCharactersIsLoading(false);
       return;
     }
@@ -56,7 +56,7 @@ const useFetchCharacters = () => {
         setCharactersData({ count: results.length });
         setCharactersList(results);
       })
-      .catch(({ message }) => setCharactersError(message || 'Erro ao carregar personagens favoritos'))
+      .catch(({ message }) => setCharactersError(message))
       .finally(() => setCharactersIsLoading(false));
   }, []);
 

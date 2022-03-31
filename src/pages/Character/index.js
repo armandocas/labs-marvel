@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import "!style-loader!css-loader!react-toastify/dist/ReactToastify.css"
 import iconBook from '@assets/icones/book/Group.png';
 import iconVideo from '@assets/icones/video/Shape.png';
 import iconStar from '@assets/review/Group 4.png';
@@ -16,7 +15,11 @@ import useFetchCharacterComics from '@services/useFetchCharacterComics';
 import formatDate from '@utils/formatDate';
 import useFavoritesStorage from '@utils/useFavoritesStorage';
 import useFetchCharacterById from '@services/useFetchCharacterById';
+import { injectStyle } from 'react-toastify/dist/inject-style';
 import * as S from './styles';
+
+
+injectStyle();
 
 const Character = () => {
   const { search } = useLocation();
@@ -46,14 +49,12 @@ const Character = () => {
 
       updateFavorites(oldIsFavorite, characterId);
 
-      if (favorites.length === 5 && oldIsFavorite == false) {
-        console.log('Entrou❤😎');
-        toast("Ops...Você só pode ter 5 Heróis Favoritos! ", {
-          type: "error",
-          position: "top-right",
-          theme: "colored"
+      if (favorites.length === 5 && oldIsFavorite === false) {
+        toast('Ops...Você só pode ter 5 Heróis Favoritos! ', {
+          type: 'error',
+          position: 'top-right',
+          theme: 'colored',
         });
-
       }
 
       return favorites.length < 5 ? !oldIsFavorite : oldIsFavorite;
@@ -150,7 +151,8 @@ const Character = () => {
           </S.CharacterCol>
 
           <S.CharacterCol width="30%">
-            <img style={{ borderRadius: '50%' }}
+            <img
+              style={{ borderRadius: '50%' }}
               src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
               width="100%"
               alt={`foto ${character.name}`}

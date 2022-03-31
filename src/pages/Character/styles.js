@@ -64,7 +64,7 @@ export const CharacterSection = styled.section`
 export const CharacterCol = styled.div`
   width: 100%;
   margin-right: 0;
-  
+
   @media (min-width: ${breakpoint.sm}) {
     ${({ isSeparate }) =>
       isSeparate &&

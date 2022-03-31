@@ -25,7 +25,7 @@ const Pagination = ({ currentPage, total, setPage }) => {
   return (
     <S.Pagination>
       <Button data-testid="button-previous" onClick={() => setPage(false)}>
-        <img src={iconPrevious} alt="Próximo" width="20" />
+        <img src={iconPrevious} alt="Anterior" width="20" />
       </Button>
 
       {list.map((page, index) => (

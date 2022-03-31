@@ -11,14 +11,18 @@ import Loader from '@components/Loader';
 import CharacterCard from '@components/CharacterCard';
 import Logo from '@components/Logo';
 import ImgAction from '@components/CallToAction';
-import Footer from '../../components/Footer';
 import Pagination from '@components/Pagination';
 import useFetchCharacters from '@services/useFetchCharacters';
 import useDebounce from '@utils/useDebounce';
 import sortByName from '@utils/sortByName';
 import useFavoritesStorage from '@utils/useFavoritesStorage';
 import generatePageNumber from '@utils/generatePageNumber';
+import { injectStyle } from 'react-toastify/dist/inject-style';
+import Footer from '../../components/Footer';
 import * as S from './styles';
+
+
+injectStyle();
 
 const Home = () => {
   const { search } = useLocation();
@@ -110,9 +114,7 @@ const Home = () => {
       </S.HomeHeader>
 
       <S.HomeSection>
-        <h2>
-          Mais de 1.500 Heróis a sua escolha. Todos os personagens que você ❤ estão aqui.
-        </h2>
+        <h2>Mais de 1.500 Heróis a sua escolha. Todos os personagens que você ❤ estão aqui.</h2>
 
         <S.HomeSearch>
           <Input
