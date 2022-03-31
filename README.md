@@ -25,7 +25,7 @@ Catálogo de super Heróis. Você pode navegar por mais de 1.500 heróis da Marv
 
 # Conventional Commits
 Commits pontuais
-biblioteca : git-commit-msg-linter garante que o commit respeitará o formato do Conventional Commits:
+biblioteca: git-commit-msg-linter garante que o commit respeitará o formato do Conventional Commits:
 ```bash
 <type>([optional scope]): <description>
 
